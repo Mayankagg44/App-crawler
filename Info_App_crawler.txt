@@ -1,0 +1,20 @@
+App Crawler is targeted at developers who want to ensure their app’s basic functionality with minimal configuration. In addition to purely black-box testing, the crawler can also be configured to provide specific inputs, such as login credentials or deep links.
+
+Getting started
+
+Before starting, make sure you have a recent version of the Android SDK. This comes with Android Studio. If you install a standalone Android SDK, make sure it includes the latest latest build tools and platform tools.
+Then, download the crawler binary archive.
+Next, either start an emulator or connect a physical device using a USB cable. Confirm the device is connected by running the following command:
+
+adb devices
+
+To invoke the crawler, first extract the archive to the directory of your choice. From that directory, invoke the crawler using the following command:
+
+java -jar crawl_launcher.jar --apk-file path/to/my/app.apk --android-sdk path/to/my/android/sdk
+
+Known issues
+
+Failed to delete original signature files
+Prior to the start of the crawl, JDK 9 users may see this error message:
+
+androidx.test.tools.crawler.launcher.exceptions.ApkSigningException: Failed to delete original signature files
